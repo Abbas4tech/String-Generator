@@ -41,7 +41,7 @@ root.append(displayBox);
 // Added footer of My Name ;)
 const footer = document.createElement("footer");
 footer.classList = "footer";
-footer.innerHTML = ` <h3>Made With 💗 By <a href="https://github.com/Abbas4tech">Abbas Shaikh</a></h3>`;
+footer.innerHTML = ` <h3>Made With 💗 By <a href="https://github.com/Abbas4tech/Text-Generator-JS" target="_blank">Abbas Shaikh</a></h3>`;
 
 document.getElementsByTagName("body")[0].append(footer);
 
