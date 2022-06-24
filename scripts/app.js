@@ -63,6 +63,14 @@ const modeChecker = () => {
   }
 };
 
+const onChangeInput = (e) => {
+  const mode = modeChecker();
+  input.value =
+    mode === "Word"
+      ? e.target.value.split(" ").filter((word) => word).length
+      : e.target.value.length;
+};
+
 const textGenerator = () => {
   if (input.value <= 0 || isNaN(input.value)) {
     alert("Comeon! I am Frontend Developer, its silly to check for this");
@@ -88,3 +96,4 @@ const textGenerator = () => {
   input.value = "";
 };
 submitBtn.addEventListener("click", textGenerator);
+displayBox.addEventListener("input", onChangeInput);
