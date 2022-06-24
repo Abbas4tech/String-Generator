@@ -78,16 +78,20 @@ const textGenerator = () => {
     return;
   }
   const mode = modeChecker();
-  const words = [];
+
   const generateWordsOf = (limit) => {
-    const shuffledAlphabets = shuffler(alphabets);
-    const wordLength = getRandomWordLength(1, 10);
-    const word = shuffledAlphabets.slice(0, wordLength).join("");
-    words.push(word);
-    limit--;
-    if (limit) generateWordsOf(limit);
+    const words = [];
+    while (limit) {
+      const shuffledAlphabets = shuffler(alphabets);
+      const wordLength = getRandomWordLength(1, 10);
+      const word = shuffledAlphabets.slice(0, wordLength).join("");
+      words.push(word);
+      limit--;
+    }
     return words;
   };
+
+  if (displayBox.innerText) displayBox.innerText = "";
   mode === "Word"
     ? (displayBox.innerText = generateWordsOf(input.value).join(" "))
     : (displayBox.innerText = generateWordsOf(input.value)
